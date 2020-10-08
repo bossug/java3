@@ -18,8 +18,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Server {
-    private static final String SERVER_PORT = "server.port";
-
     private static Properties prop = new Properties();
 
     static {
@@ -34,7 +32,7 @@ public class Server {
     private List<ClientHandler> clientHandlers = new ArrayList<>();
 
     public void startServer() {
-        try (ServerSocket serverSocket = new ServerSocket(Integer.parseInt(prop.getProperty(SERVER_PORT)))) {
+        try (ServerSocket serverSocket = new ServerSocket(8189)) {
             while (true) {
                 //Ожидаем подключение пользователей
                 System.out.println("Wait client connection...");
